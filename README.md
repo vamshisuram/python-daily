@@ -24,8 +24,17 @@ Every day walks the same 8 pillars (see [pillars.md](pillars.md)): data, control
 | [6](day6_pipeline) | Data pipeline | generators, itertools, perf |
 | [7](day7_capstone) | Capstone | rebuild Day 1 idiomatically |
 
-## Run
-Python 3.12+, stdlib only.
+## Notebooks
+Each day has `practice.ipynb` (blank attempt cells + **check** cells that start red) and `solution.ipynb` (the sister, filled in). Generated from the `.py` snippets, which stay the source of truth.
+```
+make setup   # uv sync: JupyterLab + ipykernel + nbclient into .venv
+make lab     # open JupyterLab, then open dayN_*/practice.ipynb
+make build   # regenerate notebooks after editing a snippet
+make check   # run snippets, execute all solution notebooks, confirm practice checks are red
+```
+
+## Run snippets directly
+Python 3.12+; snippets are stdlib-only (notebooks need `make setup`).
 ```
 python3 day1_text/s1_data.py     # silent = all asserts passed
 ./run_all.sh                     # run everything
